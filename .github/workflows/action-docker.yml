@@ -14,7 +14,7 @@ jobs:
   #选择云端运行的环境
     runs-on: ubuntu-latest
     steps:
-    #uses代表使用一个模块，此处使用的是checkout模块，将github项目文件导入到当前环境中
+    #uses代表使用一个模块，此处使用的是checkout模块，将github项目文件导入到当前环境中(这里的模块都是js吗)
     - uses: actions/checkout@v3
     #使用with跟在后面来为前面的模块输入参数
       with:
@@ -36,6 +36,6 @@ jobs:
           context: .
           push: true
           #在这里通过加入需要编译的平台和前面配好的QEMU，buildx来达到多平台编译
-          platforms: linux/amd64,linux/arm64,linux/arm
+          platforms: linux/amd64,linux/arm64
           #指定用户/仓库名
           tags: zhufudea/tcpdump-static:latest
