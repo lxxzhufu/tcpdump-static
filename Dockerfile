@@ -1,7 +1,7 @@
 FROM alpine:3.9.2
 RUN sed -i "s|http://dl-cdn.alpinelinux.org|https://mirrors.aliyun.com|g" /etc/apk/repositories \
 && apk add gcc g++ make automake libpcap-dev
-COPY qemu-aarch64-static /usr/bin
+COPY qemu-aarch64-static /usr/bin/qemu-aarch64-static
 RUN chmod + x /usr/bin/qemu-aarch64-static
 #ADD tcpdump-4.9.2.tar.gz /opt
 WORKDIR /opt
